@@ -1,3 +1,4 @@
+import type { Type } from '@nestjs/common';
 import { AdminIdentity } from '../auth/admin-session.types';
 
 export interface CustomerExportAuditEntry {
@@ -10,4 +11,12 @@ export interface CustomerExportAuditEntry {
     region?: string;
     activity?: string;
   };
+}
+
+export interface InviteSentAuditEntry {
+  action: 'customers.invite.sent';
+  adminIdentity: AdminIdentity;
+  timestamp: string;
+  inviteId: string;
+  email: string;
 }
